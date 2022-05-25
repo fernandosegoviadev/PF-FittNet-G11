@@ -5,11 +5,6 @@ const cookieparser = require('cookie-parser');
 
 const routeRegister = require('./register');
 
-// const register = require('./register')
-// console.log(register, ' lo que me traje')
-
-// Acá se guardan los usuarios registrados
-// Luego lo voy a usar para consulta
 
 const router = Router();
 
@@ -20,10 +15,6 @@ router.use(morgan('dev'));
 router.use(express.urlencoded({ extended: true }));
 
 
-const users = [ // Esto sería la base de datos
-    {id: 1, name: 'Franco', email: 'Franco@mail.com', password: '1234'},
-    {id: 2, name: 'Toni', email: 'Toni@mail.com', password: '1234'}
-]
 
 // ESTO ES DEL FRONT PARA LA PROTECCIÓN DE RUTAS
 //---------------------------------------------------------------------------------
@@ -62,31 +53,28 @@ router.post('/login', async (req, res, next) => {
     if (email &&  password) {
 
         user = await routeRegister.findByUsername(email); // voy a buscar el email
-        // Pude ser que el error venga de atrás
+        
         if (!user) return res.send('Email inexistente')
 
         
-        if (user) {
+        if (user.length === 1 ) {
           // {id: 1, name: 'Franco', email: 'Franco@mail.com', password: '1234'}
-          console.log(user, 'será que logré el cometido');
+          // console.log(user, 'será que se logró el cometido?');
           // Y luego debería verificar el password
-          console.log(password, ' esto es password')
+          // console.log(password, ' esto es password')
 
-          console.log(user, 'esto es lo que comparo');// undefined
+          console.log(user, 'esto es lo que comparo');
 
-          if (user.password !== password) {
+          if (user[0].password !== password) {
             return res.send('La contraseña no es correcta')
                     
           }
 
-          console.log(user, 'será que logré el cometido, luego del filter');            
+          // console.log(user, 'será que se logró el cometido, luego del filter');            
           // veo el pass
         }
 
-        // user = users.filter(u => u.email === email && u.password === password)
-        // Acá iría a buscar el user y la password a la base de datos
-        // La pass debería estar hasheada duarante todo el proceso
-
+     
     }
 
     if (user) { // Si encuentro el user en la db

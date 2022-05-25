@@ -14,18 +14,20 @@ const users = [
 router.findByUsername = function(email, cb) {
   //function findByUsername(email, cb) {
     return new Promise(function (resolve, reject) {
-      for (var i = 0, len = users.length; i < len; i++) {
-        var user = users[i];
-        if (user.email === email) {
-          return resolve(user);
-        }
+      let user = users.filter( u => u.email === email)
+      
+      if (user.length === 0 || user.length === 1 ) {
+        return resolve(user);
       }
+      
       return reject(null);
     });
 }
 
 router.get('/register', (req, res, next) => {
-    res.send('El email ya se encuentra registrado en la db y fue redirigido a /register')
+    res.send('Email incorrecto, por favor indique otro correo')
+    // No respondo "email yo existe" porque eso es una falla de seguridad
+    // da información de qué correos tenemos registrados en la db
 })
 
 router.post('/register', (req, res, next) => {
@@ -46,15 +48,16 @@ router.post('/register', (req, res, next) => {
       let id = users.length + 1 ;
 
       if (findUser ) {
-        console.log('El email ya está registrado en la db y vas a /register');
+        console.log('Email incorrecto, por favor indique otro correo');
         return res.redirect('/api/register');
-        // res.send('El email ya está registrado en la db y vas a /register');
+        
 
       } else {
         users.push({id, name, email, password}); // Acá debería crear el user en la db
         console.log(users, 'luego de agregar el nuevo user')
         console.log('Se creo el registro y volves a barra');
-        res.redirect('/');
+        res.status(200).json(users[users.length - 1])
+        // res.redirect('/');
         // res.send('Se creo el registro y volver a barra')   
       }
         
@@ -62,7 +65,7 @@ router.post('/register', (req, res, next) => {
     } else {
       console.log('Datos incompletos, no se creo el registro y vas a /register'); 
       res.redirect('/api/register');
-      // res.send('Datos incompletos, no se creo el registro y vas a /register');
+      
   
     }
 
