@@ -11,7 +11,7 @@ export function NavBar () {
                     <button id='btn-login' >Login</button>
             </Link>
             
-            <Link to = '/create'>
+            <Link to = '/register'>
                     <button id='btn-create' >Create Account</button>
             </Link>
 
