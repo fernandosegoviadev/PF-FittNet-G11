@@ -24,20 +24,6 @@ function App() {
           </Routes>      
         </div>
       
-
-        {/* <Route exact path = '/'>
-          <NavBar/>
-          <Landing/>
-          FittNet
-        </Route>
-
-       
-        <Route path = '/create'>
-          <Create/>
-        </Route>   */}
-
-
-      
     </div>
 
   );
