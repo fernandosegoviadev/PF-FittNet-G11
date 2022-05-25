@@ -1,11 +1,16 @@
 import './App.css';
-import logoFittNet from "../../logo_fitnet.jpg"
+import {Route, Routes} from 'react-router-dom';
+import Landing from './Components/Landing/Landing';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>FittNet</h1>
-      <img height="200" src={logoFittNet} />  
+      <Routes>
+      <Route path='/' element={<Landing/>} />
+      
+      FittNet
+      </Routes>      
     </div>
   );
 }
