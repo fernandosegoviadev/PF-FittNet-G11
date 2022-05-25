@@ -5,6 +5,9 @@ import Landing from './Components/Landing/Landing';
 import { Home } from './Components/Home/Home';
 import { Login } from './Components/Login/Login';
 import { Register } from './Components/Register/Register';
+import { Create } from './components/Create/Create';
+import { NavBar } from './components/NavBar/NavBar';
+import logoFittNet from './images/logo_fitnet.jpg'
 
 
 
