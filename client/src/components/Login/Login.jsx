@@ -78,7 +78,7 @@ export function Login () {
                 <br />
                 <a>Falta hacer la verificación con Google</a>
                 <br />
-                <a href='/register'>Crear cuenta</a>
+                <a href='/create'>Crear cuenta</a>
                 <br />
                 <a href='/'>Volver</a>        
             </div>

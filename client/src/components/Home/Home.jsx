@@ -1,4 +1,4 @@
-import logoFittNet from "../../images/logo_fitnet.jpg";
+import logoFittNet from "../images/logo_fitnet.jpg";
 
 
 export function Home () {
