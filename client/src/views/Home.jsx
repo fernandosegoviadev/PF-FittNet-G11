@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from "../Components/NavBar/NavBar";
-import HomeMain from "../Components/Home/HomeMain";
+import NavBar from "../components/NavBar/NavBar";
+import HomeMain from "../components/Home/HomeMain";
 
 export default function Home() {
 

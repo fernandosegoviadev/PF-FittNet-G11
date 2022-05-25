@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from "../Components/NavBar/NavBar";
-import LandingInfo from "../Components/Landing/LandingInfo"
+import NavBar from "../components/NavBar/NavBar";
+import LandingInfo from "../components/Landing/LandingInfo"
 
 export default function Landing() {
 
