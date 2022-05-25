@@ -9,6 +9,6 @@ mongoose.connect(MONGO_LOCAL_DB, ()=>{
 
 
 
-module.exports = { // para poder importar los modelos así: const { Product, User } = require('./db.js');
-    conn: mongoose,     // para importart la conexión { conn } = require('./db.js');
+module.exports = { 
+    conn: mongoose,    
   };
