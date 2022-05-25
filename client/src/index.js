@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom'; // Para el ruteo
-import { Provider } from 'react-redux'; // Para envolver la app con el estado global
-import store from './redux/store'; // Me traigo el store
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store/index'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
         <App />
-      </React.StrictMode>
-    </BrowserRouter>
-  </Provider>,
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
+
   document.getElementById('root')
 );
 
