@@ -7,6 +7,9 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
+router.get('/', async (req, res) => {    
+    res.send(`prueba API rest Fittnet esta corriendo`);
+});
 
 
 module.exports = router;
