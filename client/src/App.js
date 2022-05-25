@@ -1,12 +1,32 @@
 import './App.css';
-import logoFittNet from "../../logo_fitnet.jpg"
+import {Route, Routes} from 'react-router-dom';
+import Landing from './Components/Landing/Landing';
+
+import { Home } from './Components/Home/Home';
+import { Login } from './Components/Login/Login';
+import { Register } from './Components/Register/Register';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <h1>FittNet</h1>
-      <img height="200" src={logoFittNet} />  
+
+        <div className="App">
+          <Routes>
+          <Route path='/' element={<Landing/>} />
+          <Route path='/home' element={<Home/>} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/register' element={<Register/>} />
+
+          
+          FittNet
+          </Routes>      
+        </div>
+      
     </div>
+
   );
 }
 
