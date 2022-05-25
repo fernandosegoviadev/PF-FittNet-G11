@@ -4,11 +4,13 @@ import './styles/Landing.css'
 import strong from '../images/gym2.jpg'
 import mujerHombre from '../images/man-1920.jpg'
 import uniteGyms from '../images/modern-gym.jpg'
-
+import { NavBar } from '../NavBar/NavBar';
 export default function Landing() {
 
     return (
-        <div>aquí va el nav
+        <div>
+            <NavBar/>
+           
             <div className='ingresar_registrarse'>
                 <img className='image_strong' src={strong} alt="" />
                 <Link className='ingresar' to='/login'>Ingresar</Link>
