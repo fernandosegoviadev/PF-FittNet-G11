@@ -1,29 +1,12 @@
 const { Router } = require('express');
-const routeLogin = require('./login');
-const routeLogout = require('./logout');
-const routeRegister = require('./register');
-
+// Importar todos los routers;
+// Ejemplo: const authRouter = require('./auth.js');
 
 
 const router = Router();
 
-
-router.use('/api', routeLogin);
-router.use('/api', routeLogout);
-router.use('/api', routeRegister);
-
-
-
-
-router.get('/', (req, res) => {
-    console.log('recibo el get del test')
-    res.status(200).send("estoy en get de api (mi home)")
-});
-
-
-
-
-
+// Configurar los routers
+// Ejemplo: router.use('/auth', authRouter);
 
 
 module.exports = router;
